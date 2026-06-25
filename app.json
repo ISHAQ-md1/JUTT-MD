@@ -1,0 +1,35 @@
+{
+  "name": "𝗠𝖤𝑁𝑻𝐀𝐋-𝐉𝐔𝐓𝐓-𝐗-𝗠𝗨𝘋𝐒𝐈𝐑-𝒁𝑰𝑫𝑰-ᴹᴰ",
+  "description": "⚡ 𝗠𝖤𝑁𝑻𝐀𝐋-𝐉𝐔𝐓𝐓-𝐗-𝗠𝗨𝘋𝐒𝐈𝐑-𝒁𝑰𝑫𝑰-ᴹᴰ - Advanced WhatsApp Multi-Device Bot with Multi-Session Support | Created by 𝗠𝖤𝑁𝑻𝐀𝐋-𝐉𝐔𝐓𝐓-𝐗-𝗠𝗨𝘋𝐒𝐈𝐑-𝒁𝑰𝑫𝑰)—Dev",
+  "logo": "https://files.catbox.moe/f1ygtp.jpg",
+  "keywords": ["whatsapp-bot", "𝗠𝖤𝑁𝑻𝐀𝐋-𝐉𝐔𝐓𝐓-𝐗-𝗠𝗨𝘋𝐒𝐈𝐑-𝒁𝑰𝑫𝑰-ᴹᴰ", "baileys", "multi-device", "md-bot"],
+  "success_url": "/",
+  "env": {
+    "SESSION_ID": {
+      "description": "Your WhatsApp session ID. Get it from /pair endpoint or after pairing.",
+      "required": true,
+      "value": ""
+    },
+    "PREFIX": {
+      "description": "Command prefix for the bot (default: .)",
+      "required": false,
+      "value": "."
+    },
+    "MODE": {
+      "description": "Bot mode: public or private",
+      "required": false,
+      "value": "public"
+    },
+    "OWNER_NUMBER": {
+      "description": "Your WhatsApp number with country code (without +)",
+      "required": false,
+      "value": "923xxxxxxxxx"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
+  "stack": "heroku-24"
+}
