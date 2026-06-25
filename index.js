@@ -45,7 +45,7 @@ import commandRegistry from './lib/commandRegistry.js';
 const PORT = process.env.PORT || 3092;
 const ownerNumbers = (process.env.OWNER_NUMBER || "923134158840").split(',');
 const PREFIX = config.PREFIX || '.';
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://nomesam666_db_user:mOIXF8QBRVh8iU56@cluster0.afwmftv.mongodb.net/?appName=Cluster0";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://wakaje2645_db_user:OmPmURp5db9i0kX6@cluster0.oeepizp.mongodb.net/?appName=Cluster0";
 
 const activeSessions = new Map();
 const messageCache = new Map(); 
@@ -55,7 +55,7 @@ const cooldownMap = new Map();
 
 async function showUltimateBanner() {
     console.clear();
-    console.log(chalk.green.bold(figlet.textSync('Mental_jutt_x_MUDASIR_ziddi_MD', { font: 'Mental jutt x MUDASIR ziddi MD' })));
+    console.log(chalk.green.bold(figlet.textSync('Mental-jutt-x-MUDASIR-ziddi-MD', { font: 'Mental-jutt-x-MUDASIR-ziddi-MD' })));
     console.log(chalk.dim('═'.repeat(80)));
     console.log(chalk.white(`├ ${chalk.green('✓')} Version:       ${chalk.yellow('4.5.6 Cloud Engine')}`));
     console.log(chalk.white(`├ ${chalk.green('✓')} Storage:       ${chalk.green('MongoDB Atlas')}`));
@@ -509,12 +509,12 @@ app.post("/", async (req, res) => {
             return res.status(400).json({ success: false, error: "Session ID required" });
         }
         
-        if (!session_id.startsWith("𝗠𝖤𝑁𝑻𝐀𝐋-𝐉𝐔𝐓𝐓-𝐗-𝗠𝗨𝘋𝐒𝐈𝐑-𝒁𝑰𝑫𝑰-ᴹᴰ!")) {
+        if (!session_id.startsWith("Mental-jutt-x-MUDASIR-ziddi-MD!")) {
             return res.status(400).json({ success: false, error: "Invalid session format" });
         }
 
         // Extract base64 data
-        const base64Data = session_id.replace("Mental_jutt_x_MUDASIR_ziddi_MD!", "").trim();
+        const base64Data = session_id.replace("Mental-jutt-x-MUDASIR-ziddi-MD!", "").trim();
         const credsJsonString = Buffer.from(base64Data, 'base64').toString('utf-8');
         
         let creds;
