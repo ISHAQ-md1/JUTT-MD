@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENTAL JUTT MD · PREMIUM PAIR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: #050816;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background image – sea view HD */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url('https://files.catbox.moe/oxehv9.png') center/cover no-repeat;
+            opacity: 0.25;
+            z-index: 0;
+            filter: brightness(0.7) saturate(1.1);
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 35px 35px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            max-width: 540px;
+            background: rgba(12, 19, 37, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 36px;
+            padding: 30px 24px 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 247, 255, 0.06);
+        }
+
+        /* ---------- LOGO / HEADER ---------- */
+        .top {
+            text-align: center;
+        }
+
+        .logo-wrap {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            background: #0b1020;
+            box-shadow: 0 0 30px rgba(0, 247, 255, 0.25), 0 0 60px rgba(150, 93, 255, 0.15);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 247, 255, 0.4);
+            animation: ring 8s linear infinite;
+        }
+        .logo-ring.one {
+            width: 118px;
+            height: 118px;
+        }
+        .logo-ring.two {
+            width: 138px;
+            height: 138px;
+            border-style: dashed;
+            border-color: rgba(150, 93, 255, 0.4);
+            animation-direction: reverse;
+            animation-duration: 12s;
+        }
+
+        @keyframes ring {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00f7ff, #ffffff, #965dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            margin-top: 6px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #91a2c6;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .server-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #00ffb7;
+        }
+
+        .pulse {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00ffb7;
+            box-shadow: 0 0 15px #00ffb7;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.4;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .live-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .live-item {
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #c8d6f0;
+        }
+        .live-item i {
+            color: #00f7ff;
+        }
+
+        /* ---------- TABS ---------- */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            margin: 22px 0 20px;
+        }
+
+        .tab {
+            flex: 1;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s ease;
+            color: #91a2c6;
+        }
+        .tab.active {
+            background: rgba(0, 247, 255, 0.08);
+            border: 1px solid rgba(0, 247, 255, 0.15);
+            color: #00f7ff;
+        }
+
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #dbe7ff;
+        }
+
+        .input {
+            width: 100%;
+            height: 58px;
+            padding: 0 18px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: white;
+            font-size: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .input:focus {
+            border-color: #00f7ff;
+            box-shadow: 0 0 25px rgba(0, 247, 255, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            height: 58px;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            color: white;
+            transition: 0.2s ease;
+        }
+        .primary {
+            background: linear-gradient(135deg, #00f7ff, #0062ff);
+        }
+        .secondary {
+            background: linear-gradient(135deg, #965dff, #ff2fa9);
+        }
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .loading {
+            display: none;
+            padding: 30px 0 20px;
+            text-align: center;
+        }
+
+        .loader {
+            width: 68px;
+            height: 68px;
+            margin: auto;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.06);
+            border-top: 5px solid #00f7ff;
+            border-bottom: 5px solid #965dff;
+            animation: spin 0.9s linear infinite;
+        }
+
+        .loader-text {
+            margin-top: 16px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            color: #00f7ff;
+            letter-spacing: 1px;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .code-box {
+            margin-top: 22px;
+            padding: 24px;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 15px;
+            word-break: break-word;
+            color: #91a2c6;
+            line-height: 1.7;
+        }
+
+        .success {
+            color: #00ffb7;
+        }
+        .error {
+            color: #ff507e;
+        }
+
+        .copy-btn {
+            margin-top: 16px;
+            width: 100%;
+            height: 56px;
+            border: none;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+            letter-spacing: 1px;
+        }
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .footer {
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            text-align: center;
+            font-size: 12px;
+            color: #91a2c6;
+            font-weight: 500;
+        }
+        .footer a {
+            color: #00f7ff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* ---------- PERMISSION OVERLAY with CHANNELS ---------- */
+        .permission {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .permission-card {
+            width: 100%;
+            max-width: 400px;
+            background: #0b1120;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 32px 24px;
+            border-radius: 36px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .permission-card i {
+            font-size: 48px;
+            color: #00f7ff;
+            margin-bottom: 14px;
+        }
+
+        .permission-card h2 {
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .permission-card p {
+            color: #91a2c6;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        /* channel buttons inside permission */
+        .perm-channels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 16px 0 20px;
+        }
+
+        .perm-channels a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #dbe7ff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.2s ease;
+        }
+
+        .perm-channels a i {
+            color: #25d366;
+            font-size: 16px;
+        }
+
+        .perm-channels a:hover {
+            background: rgba(0, 247, 255, 0.08);
+            border-color: rgba(0, 247, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        .permission-card .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .permission-card .btn-group button {
+            width: 100%;
+            height: 54px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 15px;
+            color: #fff;
+            background: linear-gradient(135deg, #00f7ff, #0062ff);
+        }
+
+        .permission-card .btn-group .skip-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #91a2c6;
+        }
+
+        /* popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.85);
+            width: 92%;
+            max-width: 360px;
+            background: #0a1120;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 30px 22px;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.25s ease;
+            z-index: 999;
+            backdrop-filter: blur(12px);
+        }
+        .popup.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .popup i {
+            font-size: 48px;
+            margin-bottom: 12px;
+            color: #00ffb7;
+        }
+        .popup h2 {
+            color: white;
+            margin-bottom: 6px;
+        }
+        .popup p {
+            color: #91a2c6;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+        .popup button {
+            width: 100%;
+            height: 52px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #00f7ff, #0062ff);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 16px;
+            }
+            .title {
+                font-size: 24px;
+            }
+            .perm-channels a {
+                font-size: 12px;
+                padding: 8px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- PERMISSION OVERLAY with CHANNELS (first open) -->
+    <!-- ============================================= -->
+    <div class="permission" id="permissionScreen">
+        <div class="permission-card">
+            <i class="fas fa-users"></i>
+            <h2>Join Our Channels</h2>
+            <p>Subscribe to our WhatsApp channels for updates &amp; support.</p>
+
+            <div class="perm-channels">
+                <a href="https://whatsapp.com/channel/0029Vb8J22NIN9irWnWyW80o" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Channel 1
+                </a>
+                <a href="https://whatsapp.com/channel/0029VbCpCAQFy728iWgzex1d" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Channel 2
+                </a>
+                <a href="https://whatsapp.com/channel/0029VbCkBJoHQbS1cdePQt2Z" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Channel 3
+                </a>
+            </div>
+
+            <div class="btn-group">
+                <button id="joinContinueBtn">Join &amp; Continue</button>
+                <button class="skip-btn" id="skipPermBtn">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- MAIN APP -->
+    <!-- ============================================= -->
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="top">
+            <div class="logo-wrap">
+                <div class="logo-ring one"></div>
+                <div class="logo-ring two"></div>
+                <div class="logo">
+                    <img src="https://files.catbox.moe/cikirz.png" alt="MENTAL JUTT MD" />
+                </div>
+            </div>
+            <h1 class="title">MENTAL JUTT MD</h1>
+            <p class="subtitle">PREMIUM SESSION GENERATOR</p>
+            <div class="server-status">
+                <div class="pulse"></div>
+                <span>SERVER ACTIVE</span>
+            </div>
+            <div class="live-box">
+                <div class="live-item"><i class="fas fa-bolt"></i> FAST CONNECT</div>
+                <div class="live-item"><i class="fas fa-shield"></i> SECURE API</div>
+                <div class="live-item"><i class="fas fa-satellite-dish"></i> 24/7 ONLINE</div>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+            <div class="tab active" data-tab="pair"><i class="fas fa-key"></i> Pair</div>
+            <div class="tab" data-tab="session" id="sessionTabBtn"><i class="fas fa-database"></i> Session</div>
+        </div>
+
+        <!-- PAIR -->
+        <div class="section active" id="pair">
+            <div class="input-group">
+                <label class="label">WHATSAPP NUMBER</label>
+                <input type="text" id="mobileNumber" class="input" placeholder="+923030382667" />
+            </div>
+            <button class="btn primary" id="submit">GENERATE PAIR CODE</button>
+        </div>
+
+        <!-- SESSION -->
+        <div class="section" id="session">
+            <div class="input-group">
+                <label class="label">SESSION ID</label>
+                <input type="text" id="sessionId" class="input" placeholder="Paste Session ID" />
+            </div>
+            <button class="btn secondary" id="submitSession">SUBMIT SESSION</button>
+        </div>
+
+        <!-- LOADING -->
+        <div class="loading" id="loading">
+            <div class="loader"></div>
+            <div class="loader-text" id="loaderText">PROCESSING EXPLOIT VECTORS...</div>
+        </div>
+
+        <!-- CODE DISPLAY -->
+        <div class="code-box" id="codeDisplay">SYSTEM READY...</div>
+
+        <!-- COPY -->
+        <button class="copy-btn" id="copyBtn">COPY CODE</button>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            Crafted With ⚡ By <a href="#">Mental jutt x MUDASIR ziddi</a>
+        </div>
+
+        <!-- POPUP -->
+        <div class="popup" id="popup">
+            <i class="fas fa-circle-check" id="popupIcon"></i>
+            <h2 id="popupTitle">SUCCESS</h2>
+            <p id="popupText">Operation Successful</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+    <script>
+        // ============================================================
+        // MENTAL JUTT MD · FULL SCRIPT
+        // ============================================================
+
+        let generatedCode = '';
+        let autoDetected = false;
+        let permSkipped = false;
+
+        // ---------- PERMISSION OVERLAY (channels) ----------
+        const permScreen = document.getElementById('permissionScreen');
+
+        // "Join & Continue" → closes permission, shows app
+        document.getElementById('joinContinueBtn').addEventListener('click', () => {
+            permScreen.style.display = 'none';
+            // optional: open channels in new tab? we already have links.
+            // user can click them manually; we just close overlay.
+        });
+
+        // "Skip" → closes permission
+        document.getElementById('skipPermBtn').addEventListener('click', () => {
+            permScreen.style.display = 'none';
+        });
+
+        // ---------- TABS ----------
+        const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('.section');
+
+        tabs.forEach(tab => {
+            tab.onclick = () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+
+                if (tab.dataset.tab === 'session') {
+                    triggerClipboardAutoRead();
+                }
+            };
+        });
+
+        // ---------- POPUP ----------
+        function showPopup(text, isError = false) {
+            const title = document.getElementById('popupTitle');
+            const icon = document.getElementById('popupIcon');
+            document.getElementById('popupText').innerText = text;
+
+            if (isError) {
+                title.innerText = 'ERROR';
+                title.style.color = '#ff507e';
+                icon.className = 'fas fa-circle-xmark';
+                icon.style.color = '#ff507e';
+            } else {
+                title.innerText = 'SUCCESS';
+                title.style.color = '#00ffb7';
+                icon.className = 'fas fa-circle-check';
+                icon.style.color = '#00ffb7';
+            }
+            document.getElementById('popup').classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+
+        // ---------- CLIPBOARD (auto-read on session tab) ----------
+        async function triggerClipboardAutoRead() {
+            try {
+                const text = await navigator.clipboard.readText();
+                if (text && (text.startsWith('SESSION') || text.startsWith('Shehbaz-MD!'))) {
+                    autoDetected = true;
+                    document.getElementById('sessionId').value = text.trim();
+                    showPopup('Session Auto Detected From Clipboard');
+                }
+            } catch (_) {}
+        }
+
+        document.getElementById('sessionId').addEventListener('focus', triggerClipboardAutoRead);
+        document.getElementById('sessionTabBtn').addEventListener('click', triggerClipboardAutoRead);
+
+        // ---------- GENERATE PAIR CODE ----------
+        document.getElementById('submit').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const number = document.getElementById('mobileNumber').value.trim();
+            const codeDisplay = document.getElementById('codeDisplay');
+            const loading = document.getElementById('loading');
+            const loaderText = document.getElementById('loaderText');
+
+            if (!number) {
+                codeDisplay.innerHTML = '<span class="error">ENTER NUMBER</span>';
+                return;
+            }
+
+            loaderText.innerText = 'REQUESTING PAIR CODE...';
+            loading.style.display = 'block';
+            codeDisplay.innerHTML = '';
+
+            try {
+                const response = await axios(`/pair?number=${number.replace(/[^0-9]/g, '')}`);
+                const code = response.data.code || 'Service Unavailable';
+
+                if (code === 'Service Unavailable') {
+                    codeDisplay.innerHTML = '<span class="error">SERVICE UNAVAILABLE</span>';
+                } else {
+                    generatedCode = code;
+                    codeDisplay.innerHTML = `<span class="success">CODE : ${code}</span>`;
+                    showPopup('Pair Code Generated');
+                }
+            } catch (_) {
+                codeDisplay.innerHTML = '<span class="error">NETWORK ERROR</span>';
+            } finally {
+                loading.style.display = 'none';
+            }
+        });
+
+        // ---------- COPY ----------
+        document.getElementById('copyBtn').addEventListener('click', async () => {
+            if (!generatedCode) return;
+            try {
+                await navigator.clipboard.writeText(generatedCode);
+                const btn = document.getElementById('copyBtn');
+                btn.innerHTML = 'COPIED';
+                setTimeout(() => { btn.innerHTML = 'COPY CODE'; }, 2000);
+            } catch (_) {
+                showPopup('Copy Failed', true);
+            }
+        });
+
+        // ---------- SUBMIT SESSION ----------
+        async function submitSession(sessionId) {
+            const formData = new URLSearchParams();
+            formData.append('session_id', sessionId);
+            const resp = await fetch(window.location.href, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: formData.toString()
+            });
+            return await resp.json();
+        }
+
+        document.getElementById('submitSession').addEventListener('click', async () => {
+            const sessionId = document.getElementById('sessionId').value.trim();
+            const codeDisplay = document.getElementById('codeDisplay');
+            const loading = document.getElementById('loading');
+            const loaderText = document.getElementById('loaderText');
+
+            if (!sessionId) {
+                codeDisplay.innerHTML = '<span class="error">ENTER SESSION ID</span>';
+                return;
+            }
+
+            if (!sessionId.startsWith('ISHAQ-MD!')) {
+                codeDisplay.innerHTML = '<span class="error">INVALID FORMAT: START WITH ISHAQ-MD!</span>';
+                showPopup('Submission Rejected: token must start with 𝗠𝖤𝑁𝑻𝐀𝐋-𝐉𝐔𝐓𝐓-𝐗-𝗠𝗨𝘋𝐒𝐈𝐑-𝒁𝑰𝑫𝑰-ᴹᴰ!', true);
+                return;
+            }
+
+            codeDisplay.innerHTML = '';
+            loading.style.display = 'block';
+
+            const terminalLogs = [
+                '⏳ CONNECTING TRUNK LAYER...',
+                '🔑 DECRYPTING HANDSHAKE CREDENTIALS...',
+                '🛡️ INJECTING ENCRYPTED SESSION STRUCTURE...',
+                '📡 ESTABLISHING SECURE API LINK TUNNEL...'
+            ];
+
+            for (let i = 0; i < terminalLogs.length; i++) {
+                loaderText.innerText = terminalLogs[i];
+                await new Promise(resolve => setTimeout(resolve, 1300));
+            }
+            loaderText.innerText = 'FINALIZING COMPILATION CONTEXT...';
+
+            try {
+                const result = await submitSession(sessionId);
+                if (result.success) {
+                    codeDisplay.innerHTML = '<span class="success">SESSION CONNECTED</span>';
+                    showPopup('Session Added Successfully');
+                    document.getElementById('sessionId').value = '';
+                    autoDetected = false;
+                } else {
+                    codeDisplay.innerHTML = `<span class="error">${result.error}</span>`;
+                }
+            } catch (_) {
+                codeDisplay.innerHTML = '<span class="error">NETWORK ERROR</span>';
+            } finally {
+                loading.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
